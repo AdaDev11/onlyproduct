@@ -1,7 +1,14 @@
 {
-  "build": {
-    "env": {
-      "NODE_OPTIONS": "--max_old_space_size=4096"
+  "builds": [
+    {
+      "src": "vite.config.ts",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     }
-  }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/" }
+  ]
 }
